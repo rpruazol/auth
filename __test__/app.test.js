@@ -8,9 +8,7 @@ const request = supertest(app);
 const username = 'test';
 const password = 'testpassword';
 
-describe('routes', () => {
-  const username = 'test';
-  const password = 'testpassword';
+describe('routes', async ()  => {
 
   beforeAll(async () => {
     await sequelize.sync();
