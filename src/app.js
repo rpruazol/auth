@@ -7,6 +7,7 @@ const base64 = require('base-64');
 const { Sequelize, DataTypes } = require('sequelize');
 require('dotenv').config();
 
+
 // Prepare the express app
 const app = express();
 
@@ -92,3 +93,6 @@ sequelize.sync()
   }).catch(e => {
     console.error('Could not start server', e.message);
   });
+
+
+  module.exports = {app, sequelize}
