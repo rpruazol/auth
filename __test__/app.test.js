@@ -1,6 +1,7 @@
 'use strict';
 
-const { app, sequelize } = require('../src/app');
+const { app } = require('../src/server');
+const {sequelize} = require('../src/auth/models/index');
 const supertest = require('supertest');
 
 const request = supertest(app);
@@ -8,10 +9,10 @@ const request = supertest(app);
 const username = 'test';
 const password = 'testpassword';
 
-describe('routes', async ()  => {
+describe('routes', ()  => {
 
   beforeAll(async () => {
-    await sequelize.sync();
+    await sequelize.sync({force: true});
   });
 
   afterAll(async () => {
